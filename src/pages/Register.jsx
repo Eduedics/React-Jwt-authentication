@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import FlashMessageContext from '../context/FlashMessageContext'
 
+
 const Register = () => {
   const { showMessage } = useContext(FlashMessageContext)
   const [username, setUsername] = useState('')
@@ -25,24 +26,28 @@ const Register = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Register</h2>
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        required
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
-      <button type="submit">Register</button>
-    </form>
+    <div className="register-container">
+      <form onSubmit={handleSubmit} className="register-form">
+        <h2 className="register-title">Register</h2>
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
+          className="register-input"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+          className="register-input"
+        />
+        <button type="submit" className="register-button">Register</button>
+      </form>
+    </div>
   )
 }
 

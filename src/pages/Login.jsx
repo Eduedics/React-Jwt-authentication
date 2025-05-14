@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react'
 import AuthContext from '../context/AuthContext'
 import { Link } from 'react-router-dom'
-import './Login.css' // Make sure this path matches your structure
+
+
 
 const Login = () => {
   const [username, setUsername] = useState('')

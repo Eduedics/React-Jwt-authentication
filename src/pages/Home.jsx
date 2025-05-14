@@ -6,23 +6,20 @@ export const Home = () => {
   const { user, logoutUser } = useContext(AuthContext)
 
   return (
-    <div>
-      <nav>
-        {user && (
+    <div className="home-container">
+      <nav className="home-nav">
+        {user ? (
           <>
-            <Link to="/">Home</Link>
-            <span> | </span>
-            <button onClick={logoutUser}>Logout</button>
-            <span> | </span>
-            <span>Welcome, {user.username}!</span>
+            <Link to="/" className="nav-link">Home</Link>
+            <button onClick={logoutUser} className="nav-button">Logout</button>
+            <span className="nav-user">Welcome, {user.username}!</span>
           </>
-        )}
-        {!user && (
-          <Link to="/login">Login</Link>
+        ) : (
+          <Link to="/login" className="nav-link">Login</Link>
         )}
       </nav>
 
-      <h1>Home Page</h1>
+      <h1 className="home-title">Home Page</h1>
     </div>
   )
 }

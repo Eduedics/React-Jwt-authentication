@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import FlashMessageContext from '../context/FlashMessageContext'
 
+
 const ForgotPassword = () => {
   const [email, setEmail] = useState('')
   const { showMessage } = useContext(FlashMessageContext)
@@ -22,17 +23,20 @@ const ForgotPassword = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Forgot Password</h2>
-      <input
-        type="email"
-        placeholder="Enter your email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
-      <button type="submit">Send Reset Link</button>
-    </form>
+    <div className="forgot-container">
+      <form onSubmit={handleSubmit} className="forgot-form">
+        <h2 className="forgot-title">Forgot Password</h2>
+        <input
+          type="email"
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          className="forgot-input"
+        />
+        <button type="submit" className="forgot-button">Send Reset Link</button>
+      </form>
+    </div>
   )
 }
 
