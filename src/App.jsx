@@ -3,6 +3,7 @@ import './App.css'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import PrivateRoute from './utils/PrivateRoute'
+import Register from './pages/Register'
 
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 
@@ -23,6 +24,8 @@ function App() {
           }
         />
       {/* PUPLIC ROUTE */}
+          
+          <Route path="/register" element={<Register />} />
           <Route element={<Login/>} path='/login'/>
         </Routes>
       </Router>
