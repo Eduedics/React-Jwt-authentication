@@ -63,20 +63,15 @@ export const AuthProvider = ({ children }) => {
     setAuthTokens(null)
     setUser(null)
     localStorage.removeItem('authTokens')
-<<<<<<< HEAD
     showMessage('Logged out successfully', 'info')
-=======
->>>>>>> 16015ae (auth info accessible globaly)
+
   }
 
   // Auto-login from localStorage
   useEffect(() => {
     if (authTokens) {
-<<<<<<< HEAD
       setUser(jwtDecode(authTokens.access))
-=======
-      setUser(jwt_decode(authTokens.access))
->>>>>>> 16015ae (auth info accessible globaly)
+
     }
   }, [authTokens])
 
