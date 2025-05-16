@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import PrivateRoute from './utils/PrivateRoute'
 import Register from './pages/Register'
+import FlashMessage from './components/FrashMessages'
 
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
       <Router>
+        <FlashMessage />
         <Routes>
       {/* PRIVATE ROUTE */}
         <Route
