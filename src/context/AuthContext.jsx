@@ -1,11 +1,14 @@
 import React, { createContext, useState, useEffect } from 'react'
 
+
 import {jwtDecode} from 'jwt-decode'
 
 import FlashMessageContext from './FlashMessageContext'
 import { useContext } from 'react'
 
-import jwt_decode from 'jwt-decode'
+
+import {jwtDecode} from 'jwt-decode'
+
 
 
 import FlashMessageContext from './FlashMessageContext'
@@ -26,7 +29,6 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(() =>
     localStorage.getItem('authTokens')
       ? jwtDecode(JSON.parse(localStorage.getItem('authTokens')).access)
-
       : null
   )
 
@@ -66,7 +68,6 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     if (authTokens) {
       setUser(jwtDecode(authTokens.access))
-
     }
   }, [authTokens])
 
